@@ -52,7 +52,7 @@ function setup() {
   }
 }
 
-function motherboardFunc(){
+function motherboardFunc(){ // Motherboard from CyberChase load in through circles
   motherboard.resize(400,400)
   var loc = [random(0,motherboard.width),random(0,motherboard.height)]
 	noStroke()
@@ -62,7 +62,7 @@ function motherboardFunc(){
      circle(loc[0],loc[1],random(1,random(1,20)))
   }
 }
-class flowersObj{
+class flowersObj{ // Spongebob flower particles
   constructor(x,y,xSpeed,ySpeed) {
     this.x = random(0, width)
     this.y = random(0, height)
@@ -104,13 +104,13 @@ function draw(){
       pop()
       push()
       translate(windowWidth/1.9, windowHeight/30)
-      for(var i=0; i < jellyfishTint; i++){
+      for(var i=0; i < jellyfishTint; i++){ // Tinting, movement
         tint(163, 147, 245);
         image(jellyfish,i*40,140,jellyfish.width/2,jellyfish.height/2);
       }
       pop()
       fill("#34457d")
-      textSize(100);
+      textSize(100); // Playing with text
       text("Nostalgia", windowWidth/3.9, windowHeight/1.05)
       randomSizing = random(1,7)
       stroke(255)
@@ -120,12 +120,12 @@ function draw(){
         ellipse(nostalgiaArray[i].x, nostalgiaArray[i].y, randomSizing, randomSizing)
       }
   }
-  if (frameCount > 2000 && frameCount < 2550){
+  if (frameCount > 2000 && frameCount < 2550){ // Scene 2
     background(255)
     image(back,0,0)
     translate(windowWidth/11, windowHeight/7)
     if (frameCount > 2015 && frameCount < 2250){
-      squaremap = map(mouseX, 0, char.height, 40, 0);
+      squaremap = map(mouseX, 0, char.height, 40, 0); // Scramble cubing
       for (x = 0; x < width; x += cubes) {
         for (y = 0; y < height; y += cubes) {
           square = char.get(x, y, cubes, cubes)
@@ -151,6 +151,7 @@ function draw(){
     }
   }
 }
+// Can stop scene 2 gifs with mouse pressing
  function mousePressed() {
     gravityFalls.pause();
     raven.pause();
